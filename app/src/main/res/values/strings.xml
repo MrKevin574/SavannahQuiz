@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuizSabana</string>
+    <string name="sabana_quiz">Sabana Quiz</string>
+    <string name="cheetah">Cheetah</string>
 </resources>
