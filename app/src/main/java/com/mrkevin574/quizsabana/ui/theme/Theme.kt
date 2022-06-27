@@ -19,6 +19,17 @@ val TitanOneFamily = FontFamily(
     Font(R.font.titanone, FontWeight.Normal)
 )
 
+val AnekLatinFamily = FontFamily(
+    Font(R.font.aneklatin_regular, FontWeight.Normal),
+    Font(R.font.aneklatin_bold, FontWeight.Bold),
+    Font(R.font.aneklatin_extrabold, FontWeight.ExtraBold),
+    Font(R.font.aneklatin_light, FontWeight.Light),
+    Font(R.font.aneklatin_extralight, FontWeight.ExtraLight),
+    Font(R.font.aneklatin_semibold, FontWeight.ExtraBold),
+    Font(R.font.aneklatin_thin, FontWeight.Thin),
+    Font(R.font.aneklatin_medium, FontWeight.Medium)
+)
+
 @Composable
 fun QuizSabanaTheme(content: @Composable () -> Unit) {
 

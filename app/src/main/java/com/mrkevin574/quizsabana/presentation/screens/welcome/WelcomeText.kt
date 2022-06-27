@@ -1,6 +1,5 @@
 package com.mrkevin574.quizsabana.presentation.screens.welcome
 
-import android.text.Layout
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
