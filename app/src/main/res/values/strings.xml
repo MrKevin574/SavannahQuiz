@@ -2,4 +2,16 @@
     <string name="app_name">QuizSabana</string>
     <string name="sabana_quiz">Sabana Quiz</string>
     <string name="cheetah">Cheetah</string>
+    <string name="question_1">Where is the largest savannah</string>
+    <string name="america">America</string>
+    <string name="europe">Europe</string>
+    <string name="africa">Africa</string>
+    <string name="question_2">Who is the king of the jungle</string>
+    <string name="the_lion">The Lion</string>
+    <string name="the_eagle">The Eagle</string>
+    <string name="the_human">The Human</string>
+    <string name="question_3">What climate characterizes the savannah?</string>
+    <string name="warm">Warm</string>
+    <string name="tropical">Tropical</string>
+    <string name="cold">Cold</string>
 </resources>
