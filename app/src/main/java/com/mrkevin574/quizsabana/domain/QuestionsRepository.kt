@@ -1,14 +1,16 @@
 package com.mrkevin574.quizsabana.domain
 
-import com.mrkevin574.quizsabana.data.api.getAllQuestions
+import android.content.Context
+import com.mrkevin574.quizsabana.data.api.QuestionsAPI
 import com.mrkevin574.quizsabana.domain.model.Question
 import com.mrkevin574.quizsabana.util.QUESTIONS_COUNT
+import javax.inject.Inject
 
-class QuestionsRepository()
+class QuestionsRepository @Inject constructor(private val api : QuestionsAPI)
 {
-    fun getRandomQuestions() : List<Question>
+    fun getRandomQuestions() : MutableList<Question>
     {
-        val questions = getAllQuestions()
+        val questions = api.getAllQuestions()
         val randomQuestions = mutableListOf<Question>()
 
         while (randomQuestions.size != QUESTIONS_COUNT)

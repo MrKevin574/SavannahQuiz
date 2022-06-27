@@ -1,10 +1,8 @@
 package com.mrkevin574.quizsabana.presentation.screens.quiz
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.OutlinedButton
@@ -18,9 +16,9 @@ import androidx.compose.ui.unit.sp
 import com.mrkevin574.quizsabana.ui.theme.SecondaryColor
 
 @Composable
-fun QuestionButton(text : String) {
+fun QuestionButton(text : String, onClick : () -> Unit) {
     OutlinedButton(
-        onClick = {},
+        onClick = onClick,
         shape = CircleShape,
         border = BorderStroke(1.dp, SecondaryColor),
         colors = ButtonDefaults.buttonColors(
@@ -36,10 +34,4 @@ fun QuestionButton(text : String) {
             color = SecondaryColor
         )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun QuestionButtonP() {
-    QuestionButton(text = "Chilling and you fuck you")
 }

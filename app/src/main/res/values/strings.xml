@@ -14,4 +14,23 @@
     <string name="warm">Warm</string>
     <string name="tropical">Tropical</string>
     <string name="cold">Cold</string>
+    <string name="question_4">The animals of the savannah are</string>
+    <string name="domestic">Domestic</string>
+    <string name="wild">Wild</string>
+    <string name="smart">Smart</string>
+    <string name="question_5">What is the fastest animal in the savannah</string>
+    <string name="monkey">The Monkey</string>
+    <string name="question_6">Do lions eat human meat?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="sometimes">Sometimes</string>
+    <string name="question_7">Which of these channels records the savannah</string>
+    <string name="disney">Disney</string>
+    <string name="discovery_kids">Discovery Kids</string>
+    <string name="discovery_channel">Discovery Channel</string>
+    <string name="question_8">How many dinosaurs are there in the savannah?</string>
+    <string name="number1">1,556</string>
+    <string name="number2">16</string>
+    <string name="number0">0</string>
+    <string name="question_9">Eskimos live in the savannah</string>
 </resources>
