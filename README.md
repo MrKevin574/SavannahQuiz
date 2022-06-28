@@ -24,7 +24,7 @@ Solución del reto
 
 # WelcomeScreen
 
-![WelcomeScreen](https://user-images.githubusercontent.com/73857138/176320379-51a0006c-cdea-4d29-8008-5f43db94f40f.jpg)
+![WelcomeScreen](https://user-images.githubusercontent.com/73857138/176322076-4ef4513f-c7d1-46c5-8d58-308979b6b140.jpg)
 
 
 
