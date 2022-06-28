@@ -2,6 +2,8 @@ buildscript {
     ext {
         compose_version = '1.2.0-rc02'
         nav_version = "2.4.2"
+        roomVersion = "2.4.2"
+
     }
     dependencies {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.39.1'
