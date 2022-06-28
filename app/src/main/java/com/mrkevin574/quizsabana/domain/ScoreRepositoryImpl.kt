@@ -5,8 +5,11 @@ import com.mrkevin574.quizsabana.domain.model.Score
 import com.mrkevin574.quizsabana.domain.model.toDomain
 import com.mrkevin574.quizsabana.domain.model.toEntity
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class ScoreRepository @Inject constructor(private val dao : ScoreDao) {
+class ScoreRepository @Inject constructor(
+    private val dao : ScoreDao
+    )  {
     suspend fun saveScore(score : Score)
     {
         dao.insertScore(score.toEntity())

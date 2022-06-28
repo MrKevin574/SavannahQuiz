@@ -34,4 +34,6 @@
     <string name="number0">0</string>
     <string name="question_9">Eskimos live in the savannah</string>
     <string name="name">Name</string>
+    <string name="not_score">Not score found</string>
+    <string name="header_score">RANKING SCORE</string>
 </resources>

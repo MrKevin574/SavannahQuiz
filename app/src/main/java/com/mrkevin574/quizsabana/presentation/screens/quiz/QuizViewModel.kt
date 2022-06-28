@@ -6,9 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mrkevin574.quizsabana.domain.QuestionsRepository
-import com.mrkevin574.quizsabana.domain.model.Answer
 import com.mrkevin574.quizsabana.domain.model.Question
-import com.mrkevin574.quizsabana.presentation.screens.score.ScoreState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -21,19 +21,18 @@ import com.mrkevin574.quizsabana.ui.theme.PrimaryTextColor
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mrkevin574.quizsabana.R
+import com.mrkevin574.quizsabana.presentation.screens.score.ScoreViewModel
 import com.mrkevin574.quizsabana.util.Screens
 
 @Composable
 fun FinalScreen(
     navController: NavController,
-    viewModel: FinalViewModel = hiltViewModel(),
-    score: Float) {
+    score: Float,
+    viewModel: ScoreViewModel = hiltViewModel()) {
 
     var name by remember { mutableStateOf("") }
 

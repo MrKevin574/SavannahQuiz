@@ -6,7 +6,7 @@ import androidx.room.Query
 
 @Dao
 interface ScoreDao {
-    @Query("SELECT * FROM ScoreEntity")
+    @Query("SELECT * FROM ScoreEntity ORDER BY score DESC")
     suspend fun getAllScores() : List<ScoreEntity>
 
     @Insert
