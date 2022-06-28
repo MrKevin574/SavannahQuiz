@@ -36,4 +36,19 @@
     <string name="name">Name</string>
     <string name="not_score">Not score found</string>
     <string name="header_score">RANKING SCORE</string>
+    <string name="question_10">What is the lion\'s favorite prey</string>
+    <string name="galleces">Gacelles</string>
+    <string name="penguins">Penguins</string>
+    <string name="polar">Polar Bear</string>
+    <string name="question_11">Which of these animals does not live in the savannah?</string>
+    <string name="question_12">Which animal can not jump</string>
+    <string name="elephant">Elephant</string>
+    <string name="question_13">The lion\'s most difficult prey is</string>
+    <string name="buffalo">Buffalo</string>
+    <string name="question_14">Who is in charge of hunting in a pack of lions</string>
+    <string name="the_females">The females</string>
+    <string name="the_males">The Males</string>
+    <string name="the_puppies">The Puppies</string>
+    <string name="question_15">Which of these animals eat their prey alive?</string>
+    <string name="wild_dogs">The wild dogs</string>
 </resources>

@@ -84,11 +84,51 @@ class QuestionsAPI @Inject constructor(
             )
         ),
         Question(
-            question = context.getString(R.string.question_9),
+            question = context.getString(R.string.question_10),
             mutableListOf(
-                Answer(context.getString(R.string.yes), false),
-                Answer(context.getString(R.string.no), true),
-                Answer(context.getString(R.string.sometimes), false),
+                Answer(context.getString(R.string.galleces), false),
+                Answer(context.getString(R.string.penguins), true),
+                Answer(context.getString(R.string.polar), false),
+            )
+        ),
+        Question(
+            question = context.getString(R.string.question_11),
+            mutableListOf(
+                Answer(context.getString(R.string.galleces), true),
+                Answer(context.getString(R.string.penguins), false),
+                Answer(context.getString(R.string.polar), false),
+            )
+        ),
+        Question(
+            question = context.getString(R.string.question_12),
+            mutableListOf(
+                Answer(context.getString(R.string.elephant), true),
+                Answer(context.getString(R.string.the_lion), false),
+                Answer(context.getString(R.string.cheetah), false),
+            )
+        ),
+        Question(
+            question = context.getString(R.string.question_13),
+            mutableListOf(
+                Answer(context.getString(R.string.elephant), false),
+                Answer(context.getString(R.string.buffalo), true),
+                Answer(context.getString(R.string.cheetah), false),
+            )
+        ),
+        Question(
+            question = context.getString(R.string.question_14),
+            mutableListOf(
+                Answer(context.getString(R.string.the_females), true),
+                Answer(context.getString(R.string.the_males), false),
+                Answer(context.getString(R.string.the_puppies), false),
+            )
+        ),
+        Question(
+            question = context.getString(R.string.question_15),
+            mutableListOf(
+                Answer(context.getString(R.string.the_lion), false),
+                Answer(context.getString(R.string.cheetah), false),
+                Answer(context.getString(R.string.wild_dogs), false),
             )
         )
     )
