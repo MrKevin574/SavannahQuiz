@@ -24,7 +24,6 @@ import com.mrkevin574.quizsabana.ui.theme.PrimaryTextColor
 
 @Composable
 fun ScoreScreen(
-    navController: NavController,
     viewModel: ScoreViewModel = hiltViewModel()
 ) {
     val scoreState = viewModel.scores.value

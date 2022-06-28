@@ -20,7 +20,7 @@ fun AppNavigator()
     {
         composable(Screens.WelcomeScreen.route){ WelcomeScreen(navController = navController)}
         composable(Screens.QuizScreen.route){ QuizScreen(navController = navController) }
-        composable(Screens.ScoreScreen.route){ ScoreScreen(navController = navController) }
+        composable(Screens.ScoreScreen.route){ ScoreScreen() }
         composable(
             Screens.FinalScreen.route,
         arguments = listOf(navArgument(SCORE_KEY) {type = NavType.FloatType})
