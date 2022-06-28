@@ -86,7 +86,7 @@ class QuestionsAPI @Inject constructor(
         Question(
             question = context.getString(R.string.question_10),
             mutableListOf(
-                Answer(context.getString(R.string.galleces), false),
+                Answer(context.getString(R.string.gallezes), false),
                 Answer(context.getString(R.string.penguins), true),
                 Answer(context.getString(R.string.polar), false),
             )
@@ -94,7 +94,7 @@ class QuestionsAPI @Inject constructor(
         Question(
             question = context.getString(R.string.question_11),
             mutableListOf(
-                Answer(context.getString(R.string.galleces), true),
+                Answer(context.getString(R.string.gallezes), true),
                 Answer(context.getString(R.string.penguins), false),
                 Answer(context.getString(R.string.polar), false),
             )
