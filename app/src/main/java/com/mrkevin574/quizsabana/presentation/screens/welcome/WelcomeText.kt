@@ -11,6 +11,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mrkevin574.quizsabana.R
+import com.mrkevin574.quizsabana.ui.theme.PrimaryTextColor
 import com.mrkevin574.quizsabana.ui.theme.TitanOneFamily
 
 @Composable
@@ -21,7 +22,7 @@ fun WelcomeText()
         fontFamily = TitanOneFamily,
         textAlign = TextAlign.Center,
         fontSize = 40.sp,
-        color = Color.White,
+        color = PrimaryTextColor,
         modifier = Modifier.fillMaxWidth()
             .padding(top = 90.dp)
     )

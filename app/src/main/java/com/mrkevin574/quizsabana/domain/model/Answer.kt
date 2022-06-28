@@ -1,3 +1,3 @@
 package com.mrkevin574.quizsabana.domain.model
 
-data class Answer(val answer : String, val isCorrect : Boolean)
+data class Answer(val answer : String, val isCorrect : Boolean,var clicked : Boolean = false)

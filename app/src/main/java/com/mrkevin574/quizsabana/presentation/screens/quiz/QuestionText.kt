@@ -7,17 +7,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mrkevin574.quizsabana.ui.theme.PrimaryTextColor
+import com.mrkevin574.quizsabana.ui.theme.SecondaryTextColor
 
 @Composable
 fun QuestionText(text : String)
 {
     Text(
         text = text,
-        color = PrimaryTextColor,
+        color = SecondaryTextColor,
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 120.dp, start = 50.dp, end = 50.dp),
@@ -25,11 +24,4 @@ fun QuestionText(text : String)
         fontSize = 28.sp,
         fontWeight = FontWeight.Bold
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewQuestionText()
-{
-    QuestionText(text = "What are you doing?")
 }

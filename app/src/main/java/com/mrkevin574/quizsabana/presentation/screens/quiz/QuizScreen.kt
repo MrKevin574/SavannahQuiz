@@ -7,8 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.mrkevin574.quizsabana.presentation.QuizViewModel
-import com.mrkevin574.quizsabana.presentation.Screens
+import com.mrkevin574.quizsabana.util.Screens
 import androidx.compose.runtime.LaunchedEffect as LaunchedEffect1
 
 @Composable
@@ -40,15 +39,27 @@ fun QuizScreen(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                AnswerButton(answer = question.answers[0], questionState = question.questionState) {
-                    viewModel.onClickAnswer(answer = question.answers[0])
+                AnswerButton(
+                    answer = question.answers[0],
+                    questionState = question.questionState,
+                    clicked = question.answers[0].clicked
+                ) {
+                    viewModel.onClickAnswer(index = 0)
                 }
                 Spacer(modifier = Modifier.height(10.dp))
-                AnswerButton(answer = question.answers[1], questionState = question.questionState) {
-                    viewModel.onClickAnswer(answer = question.answers[1])
+                AnswerButton(
+                    answer = question.answers[1],
+                    questionState = question.questionState,
+                    clicked = question.answers[1].clicked
+                ) {
+                    viewModel.onClickAnswer(index = 1)
                 }
-                AnswerButton(answer = question.answers[2], questionState = question.questionState) {
-                    viewModel.onClickAnswer(answer = question.answers[2])
+                AnswerButton(
+                    answer = question.answers[2],
+                    questionState = question.questionState,
+                    clicked = question.answers[2].clicked
+                ) {
+                    viewModel.onClickAnswer(index = 2)
                 }
             }
             QuestionProgressBar(scoreState.actualScore)

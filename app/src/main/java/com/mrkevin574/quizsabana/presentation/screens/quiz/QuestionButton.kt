@@ -21,6 +21,7 @@ import com.mrkevin574.quizsabana.ui.theme.SecondaryColor
 fun AnswerButton(
     answer: Answer,
     questionState: QuestionState,
+    clicked : Boolean,
     onClick: () -> Unit,
 ) {
     val textAndBorderColor = when(questionState)
@@ -46,7 +47,8 @@ fun AnswerButton(
         ),
         modifier = Modifier
             .height(80.dp)
-            .padding(top = 10.dp, start = 30.dp, end = 30.dp)
+            .padding(top = 10.dp, start = 30.dp, end = 30.dp),
+        enabled = !clicked
     ) {
         Text(
             text = answer.answer,

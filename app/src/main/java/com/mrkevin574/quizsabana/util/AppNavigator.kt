@@ -1,4 +1,4 @@
-package com.mrkevin574.quizsabana.presentation
+package com.mrkevin574.quizsabana.util
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -10,7 +10,6 @@ import com.mrkevin574.quizsabana.presentation.screens.final.FinalScreen
 import com.mrkevin574.quizsabana.presentation.screens.quiz.QuizScreen
 import com.mrkevin574.quizsabana.presentation.screens.score.ScoreScreen
 import com.mrkevin574.quizsabana.presentation.screens.welcome.WelcomeScreen
-import com.mrkevin574.quizsabana.util.SCORE_KEY
 
 @Composable
 fun AppNavigator()
@@ -22,7 +21,8 @@ fun AppNavigator()
         composable(Screens.WelcomeScreen.route){ WelcomeScreen(navController = navController)}
         composable(Screens.QuizScreen.route){ QuizScreen(navController = navController) }
         composable(Screens.ScoreScreen.route){ ScoreScreen(navController = navController) }
-        composable(Screens.FinalScreen.route,
+        composable(
+            Screens.FinalScreen.route,
         arguments = listOf(navArgument(SCORE_KEY) {type = NavType.FloatType})
         ){ navBackStrategy ->
             val score = navBackStrategy.arguments?.getFloat(SCORE_KEY)

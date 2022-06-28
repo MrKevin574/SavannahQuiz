@@ -1,6 +1,4 @@
-package com.mrkevin574.quizsabana.presentation
-
-import com.mrkevin574.quizsabana.util.SCORE_KEY
+package com.mrkevin574.quizsabana.util
 
 sealed class Screens(val route : String)
 {

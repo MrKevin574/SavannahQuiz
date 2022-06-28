@@ -16,9 +16,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.mrkevin574.quizsabana.presentation.Screens
+import com.mrkevin574.quizsabana.util.Screens
 import com.mrkevin574.quizsabana.ui.theme.PrimaryColor
 import com.mrkevin574.quizsabana.R
+import com.mrkevin574.quizsabana.ui.theme.PrimaryTextColor
 
 @Composable
 fun WelcomeScreen(navController: NavController)
@@ -57,7 +58,7 @@ fun ButtonWelcome(text : String, onClick : () -> Unit)
     OutlinedButton(
         onClick = onClick,
         shape = CircleShape,
-        border = BorderStroke(2.dp, Color.White),
+        border = BorderStroke(2.dp, PrimaryTextColor),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Color.Transparent
         ),
@@ -68,7 +69,7 @@ fun ButtonWelcome(text : String, onClick : () -> Unit)
     ) {
         Text(
             text = text,
-            color = Color.White
+            color = PrimaryTextColor
         )
     }
 }

@@ -1,4 +1,4 @@
-package com.mrkevin574.quizsabana.presentation
+package com.mrkevin574.quizsabana.presentation.screens.quiz
 
 import android.os.CountDownTimer
 import androidx.compose.runtime.State
@@ -8,8 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.mrkevin574.quizsabana.domain.QuestionsRepository
 import com.mrkevin574.quizsabana.domain.model.Answer
 import com.mrkevin574.quizsabana.domain.model.Question
-import com.mrkevin574.quizsabana.presentation.screens.quiz.QuestionState
-import com.mrkevin574.quizsabana.presentation.screens.quiz.QuizState
+import com.mrkevin574.quizsabana.presentation.screens.score.ScoreState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -50,9 +49,12 @@ class QuizViewModel @Inject constructor(
         timer.start()
     }
 
-    fun onClickAnswer(answer: Answer) {
+    fun onClickAnswer(index: Int) {
         timer.cancel()
-        if (answer.isCorrect) score += (scoreState.value.actualScore * 30f)
+        question.value.answers[index].clicked = true
+        _question.value = question.value
+
+        if (question.value.answers[index].isCorrect) score += (scoreState.value.actualScore * 30f)
         nextOrFinish()
     }
 
