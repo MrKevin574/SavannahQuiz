@@ -1,7 +1,7 @@
 #  Savannah Quiz
 
-Reto que corresponde al mes de febrero de la serie de deasfios que esta proponiendo Mouredev en su proyecto de retos de creación mensual de aplicaciones de la comunidad MoureDev en base a requisitos, llamdado App Monthly Challenge 2022.
-Requisitos para la app de febrero
+Reto que corresponde al mes de marzo de la serie de deasfios que esta proponiendo Mouredev en su proyecto de retos de creación mensual de aplicaciones de la comunidad MoureDev en base a requisitos, llamdado App Monthly Challenge 2022.
+Requisitos para la app de marzo
 
 CUESTIONARIO CONTRARRELOJ: Crea una "Quiz app" contrareloj con ranking.
 
