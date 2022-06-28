@@ -25,10 +25,15 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.mrkevin574.quizsabana.R
+import com.mrkevin574.quizsabana.util.Screens
 
 @Composable
-fun FinalScreen(navController: NavController? = null, score: Float) {
+fun FinalScreen(
+    navController: NavController,
+    viewModel: FinalViewModel = hiltViewModel(),
+    score: Float) {
 
     var name by remember { mutableStateOf("") }
 
@@ -61,15 +66,13 @@ fun FinalScreen(navController: NavController? = null, score: Float) {
             ),
         )
         ButtonSaveScore {
-
+            if(name.isNotEmpty())
+            {
+                viewModel.saveScore(name , score)
+                navController.navigate(Screens.ScoreScreen.route)
+            }
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewFinalScreen() {
-    FinalScreen(score = 200f)
 }
 
 @Composable
