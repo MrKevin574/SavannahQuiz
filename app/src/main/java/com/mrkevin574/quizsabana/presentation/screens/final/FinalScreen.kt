@@ -68,7 +68,11 @@ fun FinalScreen(
             if(name.isNotEmpty())
             {
                 viewModel.saveScore(name , score)
-                navController.navigate(Screens.ScoreScreen.route)
+                navController.navigate(Screens.ScoreScreen.route){
+                    popUpTo(Screens.FinalScreen.route){
+                        inclusive = true
+                    }
+                }
             }
         }
     }

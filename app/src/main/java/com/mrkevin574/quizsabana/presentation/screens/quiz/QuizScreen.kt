@@ -21,11 +21,9 @@ fun QuizScreen(
 
     if (quizState.finalized) {
         LaunchedEffect1(quizState) {
-            navController.navigate(Screens.FinalScreen.passScore(viewModel.score))
+            goToFinalScreen(navController, viewModel.score)
         }
-
     }
-
     if (question.answers.isNotEmpty()) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -65,6 +63,14 @@ fun QuizScreen(
             QuestionProgressBar(scoreState.actualScore)
         }
     }
+}
 
+private fun goToFinalScreen(navController: NavController, score : Float)
+{
+    navController.navigate(Screens.FinalScreen.passScore(score)) {
+        popUpTo(Screens.QuizScreen.route) {
+            inclusive = true
+        }
+    }
 }
 

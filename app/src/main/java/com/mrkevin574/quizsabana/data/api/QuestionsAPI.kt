@@ -128,7 +128,7 @@ class QuestionsAPI @Inject constructor(
             mutableListOf(
                 Answer(context.getString(R.string.the_lion), false),
                 Answer(context.getString(R.string.cheetah), false),
-                Answer(context.getString(R.string.wild_dogs), false),
+                Answer(context.getString(R.string.wild_dogs), true),
             )
         )
     )

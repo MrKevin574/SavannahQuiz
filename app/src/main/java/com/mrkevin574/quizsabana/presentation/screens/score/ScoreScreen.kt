@@ -48,12 +48,6 @@ fun ScoreScreen(
                 {
                     ScoreItem(score = it, rank = counter)
                     counter++
-                    Divider(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(2.dp),
-                        color = Color.White
-                    )
                 }
             }
         }
@@ -79,7 +73,8 @@ fun HeaderScore() {
 @Composable
 fun ScoreItem(score: Score, rank: Int) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth()
+            .padding(start = 50.dp, end = 50.dp, top = 20.dp),
         horizontalArrangement = Arrangement.SpaceAround
     )
     {
