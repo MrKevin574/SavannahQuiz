@@ -1,6 +1,5 @@
 package com.mrkevin574.quizsabana.domain
 
-import android.content.Context
 import com.mrkevin574.quizsabana.data.api.QuestionsAPI
 import com.mrkevin574.quizsabana.domain.model.Question
 import com.mrkevin574.quizsabana.util.QUESTIONS_COUNT

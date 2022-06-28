@@ -10,17 +10,37 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.mrkevin574.quizsabana.domain.model.Answer
+import com.mrkevin574.quizsabana.ui.theme.PrimaryColor
+import com.mrkevin574.quizsabana.ui.theme.ProgressBarColor
 import com.mrkevin574.quizsabana.ui.theme.SecondaryColor
 
 @Composable
-fun QuestionButton(text : String, onClick : () -> Unit) {
+fun AnswerButton(
+    answer: Answer,
+    questionState: QuestionState,
+    onClick: () -> Unit,
+) {
+    val textAndBorderColor = when(questionState)
+    {
+        QuestionState.RESUME -> {
+            SecondaryColor
+        }
+        QuestionState.SELECTED -> {
+            if(answer.isCorrect)
+            {
+                PrimaryColor
+            }else{
+                ProgressBarColor
+            }
+        }
+    }
     OutlinedButton(
         onClick = onClick,
         shape = CircleShape,
-        border = BorderStroke(1.dp, SecondaryColor),
+        border = BorderStroke(1.dp, textAndBorderColor),
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Color.Transparent
         ),
@@ -29,9 +49,9 @@ fun QuestionButton(text : String, onClick : () -> Unit) {
             .padding(top = 10.dp, start = 30.dp, end = 30.dp)
     ) {
         Text(
-            text = text,
+            text = answer.answer,
             fontSize = 16.sp,
-            color = SecondaryColor
+            color = textAndBorderColor
         )
     }
 }

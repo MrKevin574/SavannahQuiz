@@ -1,3 +1,8 @@
 package com.mrkevin574.quizsabana.domain.model
 
-data class Question(val question : String = "",val answers : List<Answer> = emptyList())
+import com.mrkevin574.quizsabana.presentation.screens.quiz.QuestionState
+
+data class Question(
+    val question : String = "",
+    val answers : MutableList<Answer> = mutableListOf(),
+    val questionState: QuestionState = QuestionState.RESUME)

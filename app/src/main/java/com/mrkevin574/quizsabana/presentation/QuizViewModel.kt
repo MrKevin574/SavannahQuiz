@@ -1,40 +1,88 @@
 package com.mrkevin574.quizsabana.presentation
 
+import android.os.CountDownTimer
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.mrkevin574.quizsabana.domain.QuestionsRepository
 import com.mrkevin574.quizsabana.domain.model.Answer
+import com.mrkevin574.quizsabana.domain.model.Question
+import com.mrkevin574.quizsabana.presentation.screens.quiz.QuestionState
+import com.mrkevin574.quizsabana.presentation.screens.quiz.QuizState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class QuizViewModel @Inject constructor(
-    private val repository: QuestionsRepository
-) : ViewModel(){
+     repository: QuestionsRepository
+) : ViewModel() {
 
+    private val _question = mutableStateOf(Question())
+    private var questions: MutableList<Question> = mutableListOf()
+    val question: State<Question> = _question
 
-    var score = 0
+    private val _scoreState = mutableStateOf(ScoreState())
+    val scoreState: State<ScoreState> = _scoreState
 
-    private val questions = repository.getRandomQuestions()
-    val question = mutableStateOf(questions.random())
+    private val _quizState = mutableStateOf(QuizState())
+    val quizState: State<QuizState> = _quizState
 
-    private fun nextQuestion(onFinalized : () -> Unit)  {
-        if(questions.isEmpty()) onFinalized()
-        else{
-            question.value = questions.random()
-            questions.remove(question.value)
+    var score = 0f
+
+    private val timer = object : CountDownTimer(30000, 1) {
+        override fun onTick(millisUntilFinished: Long) {
+            _scoreState.value = scoreState.value.copy(
+                actualScore = (millisUntilFinished.toFloat() / 30000)
+            )
+        }
+
+        override fun onFinish() {
+            nextOrFinish()
         }
     }
 
-    fun onAnswerSelected(answer : Answer, onFinalized: () -> Unit)
-    {
-        if(answer.isCorrect)
-        {
-
-        }else{
-
-        }
-        nextQuestion(onFinalized = onFinalized)
+    init {
+        questions = repository.getRandomQuestions()
+        getNewQuestion()
+        timer.start()
     }
 
+    fun onClickAnswer(answer: Answer) {
+        timer.cancel()
+        if (answer.isCorrect) score += (scoreState.value.actualScore * 30f)
+        nextOrFinish()
+    }
+
+    private fun nextOrFinish() {
+        _question.value = question.value.copy(
+            questionState = QuestionState.SELECTED
+        )
+        viewModelScope.launch {
+            delay(2000)
+            if (questions.isEmpty()) {
+                finalizeQuiz()
+            } else getNewQuestion()
+        }
+    }
+
+    private fun getNewQuestion() {
+        val newQuestion = questions.random()
+        questions.remove(newQuestion)
+        _question.value = question.value.copy(
+            question = newQuestion.question,
+            answers = newQuestion.answers,
+            questionState = QuestionState.RESUME
+        )
+        timer.start()
+    }
+
+    private fun finalizeQuiz() {
+        timer.cancel()
+        _quizState.value = quizState.value.copy(
+            finalized = true
+        )
+    }
 }

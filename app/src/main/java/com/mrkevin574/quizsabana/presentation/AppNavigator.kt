@@ -23,9 +23,9 @@ fun AppNavigator()
         composable(Screens.QuizScreen.route){ QuizScreen(navController = navController) }
         composable(Screens.ScoreScreen.route){ ScoreScreen(navController = navController) }
         composable(Screens.FinalScreen.route,
-        arguments = listOf(navArgument(SCORE_KEY) {type = NavType.IntType})
+        arguments = listOf(navArgument(SCORE_KEY) {type = NavType.FloatType})
         ){ navBackStrategy ->
-            val score = navBackStrategy.arguments?.getInt(SCORE_KEY)
+            val score = navBackStrategy.arguments?.getFloat(SCORE_KEY)
             score?.let {
                 FinalScreen(navController = navController, score = it)
             }

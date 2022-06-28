@@ -4,60 +4,56 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
-import com.mrkevin574.quizsabana.domain.QuestionsRepository
 import com.mrkevin574.quizsabana.presentation.QuizViewModel
 import com.mrkevin574.quizsabana.presentation.Screens
+import androidx.compose.runtime.LaunchedEffect as LaunchedEffect1
 
 @Composable
 fun QuizScreen(
     navController: NavController,
-    viewModel : QuizViewModel = hiltViewModel()
-)
-{
+    viewModel: QuizViewModel = hiltViewModel()
+) {
     val question = viewModel.question.value
+    val scoreState = viewModel.scoreState.value
+    val quizState = viewModel.quizState.value
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceBetween
-    ){
-        QuestionText(text = question.question)
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 10.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            QuestionButton(text = question.answers[0].answer) {
-                viewModel.onAnswerSelected(
-                    answer = question.answers[0],
-                    onFinalized = { onFinalized(navController, viewModel.score)}
-                )
-            }
-            Spacer(modifier = Modifier.height(10.dp))
-            QuestionButton(text = question.answers[1].answer){
-                viewModel.onAnswerSelected(
-                    answer = question.answers[1],
-                    onFinalized = { onFinalized(navController, viewModel.score)}
-                )
-            }
-            QuestionButton(text = question.answers[2].answer){
-                viewModel.onAnswerSelected(
-                    answer = question.answers[2],
-                    onFinalized = { onFinalized(navController, viewModel.score)}
-                )
-            }
+    if (quizState.finalized) {
+        LaunchedEffect1(quizState) {
+            navController.navigate(Screens.FinalScreen.passScore(viewModel.score))
         }
-        QuestionProgressBar(100f)
+
     }
+
+    if (question.answers.isNotEmpty()) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
+            QuestionText(text = question.question)
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 10.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                AnswerButton(answer = question.answers[0], questionState = question.questionState) {
+                    viewModel.onClickAnswer(answer = question.answers[0])
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                AnswerButton(answer = question.answers[1], questionState = question.questionState) {
+                    viewModel.onClickAnswer(answer = question.answers[1])
+                }
+                AnswerButton(answer = question.answers[2], questionState = question.questionState) {
+                    viewModel.onClickAnswer(answer = question.answers[2])
+                }
+            }
+            QuestionProgressBar(scoreState.actualScore)
+        }
+    }
+
 }
 
-private fun onFinalized(navController: NavController, score : Int)
-{
-    navController.navigate(Screens.FinalScreen.passScore(score))
-}
