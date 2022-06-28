@@ -57,7 +57,7 @@ Solución del reto
 <a href="https://dagger.dev/hilt/" target="_blank">Dagger Hilt</a>
  </p>
  <p >
-<a href="https://square.github.io/retrofit/" target="_blank">Room</a>
+<a href="https://developer.android.com/jetpack/androidx/releases/room" target="_blank">Room</a>
  </p>
  <p>
 <a href="https://developer.android.com/kotlin/coroutines?hl=es-419" target="_blank">Coroutines</a>
