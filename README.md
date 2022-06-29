@@ -30,7 +30,7 @@ Solución del reto
 
 
 # Quiz Screen
-![QuizScreen](https://user-images.githubusercontent.com/73857138/176320400-e87e7c1b-6ed0-4609-93e6-57c565da5375.jpg)
+![QuizScreen](https://user-images.githubusercontent.com/73857138/176329487-eeabaeec-5662-4082-99e1-47bbc2fd91f2.jpg)
 
 
 
